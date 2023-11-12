@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="/images/icons/favicon.ico">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>Stas Kisly | UX/UI</title>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QEG9TTJVXE"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-QEG9TTJVXE');
+    </script>
+    <script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
+    <script src="lines.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anek+Devanagari:wght@400;500;600;700&family=Metrophobic&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script
+        src="https://s0.2mdn.net/ads/studio/cached_libs/tweenmax_1.19.0_643d6911392a3398cb1607993edabfa7_min.js"></script>
+
+
+    <script>
+        var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
+        function init() {
+            canvas = document.getElementById("canvas");
+            anim_container = document.getElementById("animation_container");
+            dom_overlay_container = document.getElementById("dom_overlay_container");
+            var comp = AdobeAn.getComposition("F7FCDEB21BF30748B73A8B8927565BDE");
+            var lib = comp.getLibrary();
+            handleComplete({}, comp);
+        }
+        function handleComplete(evt, comp) {
+            //This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
+            var lib = comp.getLibrary();
+            var ss = comp.getSpriteSheet();
+            exportRoot = new lib.lines();
+            stage = new lib.Stage(canvas);
+            //Registers the "tick" event listener.
+            fnStartAnimation = function () {
+                stage.addChild(exportRoot);
+                createjs.Ticker.setFPS(lib.properties.fps);
+                createjs.Ticker.addEventListener("tick", stage);
+            }
+            //Code to support hidpi screens and responsive scaling.
+            AdobeAn.makeResponsive(true, 'both', true, 1, [canvas, anim_container, dom_overlay_container]);
+            AdobeAn.compositionLoaded(lib.properties.id);
+            fnStartAnimation();
+        }
+    </script>
+
+
+</head>
+
+<body onload="init();">
+    <header>
+        <div class="header_body" id="header_body">
+            <div class="header-row" id="header_row">
+                <img src="./images/avatar.png" id="avatar" onclick="scrollToTop()" alt="" width="37px" height="37px">
+                <p class="avatar-name">Stas Kisly</p>
+
+                <!-- <a href="#experience"> -->
+                <div class="menu-bages" id="menu_bages">
+                    <span>
+                        <div class="menu-bage" onclick="window.location.href='#experience'">Product Designer</div>
+                    </span>
+                    <span>
+                        <div class="menu-bage" onclick="window.location.href='#experience'">UX Designer</div>
+                    </span>
+                    <span>
+                        <div class="menu-bage" onclick="window.location.href='#experience'">UI Designer</div>
+                    </span>
+                </div>
+                <!-- </a> -->
+            </div>
+            <div class="menu-div">
+                <div class="menu">
+                    <div class="menu-items">
+                        <button class="menu-item" data-menu-item="research">Research</button>
+                        <button class="menu-item" data-menu-item="prototyping">Prototyping</button>
+                        <button class="menu-item" data-menu-item="ui_mockups">UI Mockups</button>
+                        <button class="menu-item" data-menu-item="components">Components</button>
+                        <button class="menu-item" data-menu-item="implementation">Implementation</button>
+                        <button class="menu-item" data-menu-item="iterating">Iterate</button>
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+    </header>
+    <a href="https://www.linkedin.com/in/staskisly/" target="_blank"><button class="hire-me ">
+            <p>Hire me</p>
+        </button></a>
+
+    <div id="animation_container">
+        <canvas id="canvas" height="300"></canvas>
+        <div id="dom_overlay_container">
+        </div>
+    </div>
+    <!-- <img src="./images/lines.png" alt="" class="bg-lines" id="bg-lines"> -->
+
+    <main>
+        <section class="intro" id="intro">
+
+            <span>Intro</span>
+            <h1>Born of an Interface</h1>
+            <p>Hi! I will lead you throw the UX process, based on my personal 15 years experience in UX and UI Field.
+                Critical thinking and communication skills helps me zoom in a problem in parallel with empathy and
+                getting insights. I believe that UX . process is a team work that leads to great product creation as
+                outcome. Let me show you process on Avantra
+                where I worked as Senior Product Designer from 2021 till 2023. </p>
+                <br>
+                 <picture>
+            <source media="(min-width: 650px)" srcset="./images/main/Mission.png">
+            <img src="./images/main/Mission1.png" alt="Creating a value">
+            <picture>
+    
+
+        </section>
+
+        <section class="intro" id="research">
+            <span>Initiating the Idea</span>
+            <h1>Domain research</h1>
+            <p>Starting with domain research, I begin by looking for competitors and studying their
+                approaches, the market ecosystem, social networks, analytical data, statistics by
+                topics, and notes from professional research magazines and books. I then proceed to
+                investigate user behavior in a specific field and gather valuable experiences.</p>
+            <br>
+            <img src="./images/main/Domain_research.png" alt="Pic 1.  Architecture and concept">
+            <p class="img-alt">Pic 1. Architecture and concept</p>
+        </section>
+
+        <section class="intro" id="prototyping">
+            <span>Process</span>
+            <h1>Prototyping</h1>
+            <p>Now it's time to transform ideas and considerations into tangible concepts on paper. This
+                involves creating wireframes as a fast tool, sketches, mind maps, empathy maps, and user
+                stories. We can't definitively say what's better; what we truly need is to integrate as much as
+                possible. By bringing all these elements together, we can derive the best value.</p>
+            <br>
+            <img src="./images/main/Prototyping1.png" alt="Pic 2.  Login popup window wireframe">
+            <p class="img-alt">Pic 2. Login popup window wireframe</p>
+            <br>
+            <p>Nobody knows what will happen in the future, but a UX designer must
+                strive to understand.</p>
+
+            <br>
+            <img src="./images/main/Prototyping2.png" alt="Pic 3. Personas in Avantra  ">
+            <p class="img-alt">Pic 3. Personas in Avantra </p>
+            <br>
+            <p>Let's delve deeper into wireframing, progressing from low fidelity to high fidelity prototypes.
+                We transition from static designs to interactive ones using tools like InVision, Figma, or
+                Miro boards. Additionally, it's crucial to document the entire process using Confluence,
+                aiming to construct a system that can be expanded and supported by the next generation of
+                professionals.
+
+                Returning to the process: we now need more than one variant. Let's aim to generate at least
+                three of them and then compare these variants. We'll decide on a testing method perhaps
+                an A/B test or a 5 second test to determine which option is superior</p>
+            <img src="./images/main/Prototyping3.png" alt="Pic 4. User Roles in Avantra  "> <br>
+            <p class="img-alt">Pic 4. User Roles in Avantra </p>
+        </section>
+
+        <section class="intro" id="ui_mockups">
+            <span>Process</span>
+            <h1>UI Mockups</h1>
+            <p>Now, with Chromatic, Jira, and GitHub in place, it's time for an incredible cross team effort.
+                Let's focus on development before moving on to testing.</p>
+            <br>
+            <img src="./images/main/UI_Mockup1.png" alt="Pic 5. Login popup UI design Avantra  ">
+            <br>
+            <p class="img-alt">Pic 5. Login popup UI design Avantra </p>
+        </section>
+
+        <section class="intro" id="components">
+            <span>Process</span>
+            <h1>Components</h1>
+            <p>Decision made: we've chosen path A. Working with elements, components, molecules, and
+                atoms, or building backwards. Utilizing Figma and Miro, we bring the UI design and
+                prototype to life.</p>
+            <br>
+            <img src="./images/main/Component.png" alt="Pic 6. Accent action component ">
+            <br>
+            <p class="img-alt">Pic 6. Accent action component </p>
+        </section>
+
+        <section class="intro" id="implementation">
+            <span>Process</span>
+            <h1>Implementation</h1>
+            <p>We now have some free time to expand our molecules into a design system. Let's focus on
+                the product structure card sorting seems like the best approach, don't you agree? We'll
+                define the core values either for or against our key audience. Perhaps personas can shed
+                light on this. Should we consider alternatives for both unqualified and overqualified users?
+                Yes, offering help and wizards will guide our users through the process, ensuring a smooth
+                experience!</p>
+            <br>
+            <img src="./images/main/Implementation1.png" alt="Pic 7. Structure Card sorting workshop ">
+
+            <p class="img-alt">Pic 7. Structure Card sorting workshop </p>
+            <br><br>
+            <p>Help is a great idea, and it's important to measure its effectiveness. Let's ensure we
+                don't overlook this in future steps.
+                Our mockups are ready and have been implemented. Now, we need to ensure their
+                consistency and compliance with accessibility standards. What about contrast, colors,
+                and sizes for icons or text? I say, both! But, how can we minimize churn?</p>
+            <br>
+            <picture>
+            <source media="(min-width: 650px)" srcset="./images/main/Implementation_2.png">
+            <img src="./images/main/Dashlet_mobile.png" alt="Implementation">
+            <picture>
+            <br>
+            <p>Simplification and minimization where do we draw the line? We need predictability,
+                placeholders, and defined states. We're getting close to the MVP!</p>
+        </section>
+
+        <section class="intro" id="iterating">
+            <span>Process</span>
+            <h1>Iterating</h1>
+            <p>Deadlines are approaching fast, and with testing and the first release, it's both crazy and
+                exciting! We can't waste any time improvements will be based on user feedback, analytics,
+                inquiries, and support tickets.<br>
+                Let's leverage advanced technologies like Mixpanel, Optimizely, and VWO. Let's strive for
+                perfection!</p>
+            <br>
+            <img src="./images/main/Implementation_3.png" alt="Pic 8. Onboarding Dashboard Page">
+            <br>
+            <p class="img-alt">Pic 8. Landscape view. Checks popup.</p>
+        </section>
+
+        <section class="intro" id="experience">
+            <h1>My experience</h1>
+            <div class="grid gap-300">
+                <div class="experience-item">
+                    <div class="menu-bage">Application design <img src="./images/icons/x.svg" alt="x" class="x"></div>
+                    <p class="outline">Dominos</p>
+                </div>
+                <div class="experience-item">
+                    <div class="menu-bage | clr-green">Product designer<img src="./images/icons/x.svg" alt="x"
+                            class="x"></div>
+                    <p class="outline">Avantra</p>
+                </div>
+                <div class="experience-item">
+                    <div class="menu-bage">UI Design<img src="./images/icons/x.svg" alt="x" class="x"></div>
+                    <p class="outline">VS Lift</p>
+                </div>
+                <div class="experience-item">
+                    <div class="menu-bage | clr-green">Product designer<img src="./images/icons/x.svg" alt="x"
+                            class="x"></div>
+                    <p class="outline">UVL</p>
+                </div>
+                <div class="experience-item">
+                    <div class="menu-bage">UX Research<img src="./images/icons/x.svg" alt="x" class="x"></div>
+                    <p class="outline">CreditUp</p>
+                </div>
+                <div class="experience-item">
+                    <div class="menu-bage">UI Design<img src="./images/icons/x.svg" alt="x" class="x"></div>
+                    <p class="outline">AODance</p>
+                </div>
+                <div class="experience-item">
+                    <div class="menu-bage">UI Design<img src="./images/icons/x.svg" alt="x" class="x"></div>
+                    <a href="https://www.mavi.com.ua/" target="_blank"><p class="outline">JRS</p></a>
+                </div>
+                <div class="experience-item">
+                    <div class="menu-bage">Graphic design<img src="./images/icons/x.svg" alt="x" class="x"></div>
+                    <p class="outline">Egar</p>
+                </div>
+                <div class="experience-item">
+                    <div class="menu-bage">Owner<img src="./images/icons/x.svg" alt="x" class="x"></div>
+                    <p class="outline">Talentway</p>
+                </div>
+                <div class="experience-item">
+                    <div class="menu-bage">Product designer<img src="./images/icons/x.svg" alt="x" class="x"></div>
+                    <p class="outline">Dinai</p>
+                </div>
+                <div class="experience-item">
+                    <div class="menu-bage">UX Researcher<img src="./images/icons/x.svg" alt="x" class="x"></div>
+                    <p class="outline">Vivigle</p>
+                </div>
+                <div class="experience-item">
+                    <div class="menu-bage | clr-green">CTO<img src="./images/icons/x.svg" alt="x" class="x"></div>
+                    <p class="outline">Bubnovsky</p>
+                </div>
+                <div class="experience-item">
+                    <div class="menu-bage | clr-green">UI Designer<img src="./images/icons/x.svg" alt="x" class="x">
+                    </div>
+                    <p class="outline">GOgame</p>
+                </div>
+                <div class="experience-item">
+                    <div class="menu-bage | clr-green">CTO<img src="./images/icons/x.svg" alt="x" class="x"></div>
+                    <p class="outline">Smatos</p>
+                </div>
+                <div class="experience-item">
+                    <div class="menu-bage | clr-green">Web designer<img src="./images/icons/x.svg" alt="x" class="x">
+                    </div>
+                    <p class="outline">Simmetria</p>
+                </div>
+                <div class="experience-item">
+                    <div class="menu-bage | clr-green">UX Designer<img src="./images/icons/x.svg" alt="x" class="x">
+                    </div>
+                    <p class="outline">Edicasoft</p>
+                </div>
+                <div class="experience-item">
+                    <div class="menu-bage | clr-green">UI Designer<img src="./images/icons/x.svg" alt="x" class="x">
+                    </div>
+                    <p class="outline">SpeakUp</p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <footer>
+            <p class="ligal">Developed by <a href="https://www.zhuravskyi.com/" target="_blank">Zhuravskyi.com</a> 2023
+            </p>
+
+        </footer>
+    </main>
+
+    <div id="bg">
+        <div id="bg1"></div>
+        <div id="bg2"></div>
+        <div id="bg3"></div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
